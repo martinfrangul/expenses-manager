@@ -5,3 +5,10 @@
     width: 50rem;
     max-width: 95%;
   }
+
+  .noExpenses {
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+  }

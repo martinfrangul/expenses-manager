@@ -23,10 +23,20 @@ function NewExpense(props) {
         setIsEditing(false)
     }
 
+    let displayExpenses = <button onClick={startEditingHandler}>Add new expenses</button>
+
+    if (isEditing === true) {
+        displayExpenses = <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler}/>
+    }
+
     return (
         <div className="new-expense">
-            {!isEditing && <button onClick={startEditingHandler}>Add new expenses</button>}
-            {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler}/>}
+
+            {/* OTRA FORMA DE HACERLO CON EL && TRICK SERÍA ASÍ */}
+
+            {/* {!isEditing && <button onClick={startEditingHandler}>Add new expenses</button>}
+            {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler}/>} */}
+            {displayExpenses}
         </div>
     )
 }
